@@ -1,5 +1,6 @@
 # BB-8
 ## Our version of BB-8 from Star Wars Episode VII
+![Alt text](http://cdn.bleedingcool.net/wp-content/uploads/2015/11/bb-8.jpg "Optional title")
 
 For this project, we are attempting to build our own BB-8 as seen in the Star Wars Episode VII. He is a rolling droid with a head that can swivel around as he rolls, without falling off. 
 
