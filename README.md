@@ -9,7 +9,7 @@ To accomplish this, we used the following hardware...
 Raspberry Pi 2 B+
 2 DC gear motors + wheels
 3 servos for head control
-Old 12" Globe (main body)
+Old 12" Globe (main body) //We are working on getting a 3D printed body. Currently designing it.
 Strong Magnets
 Ball Bearing Casters
 Foam Hemisphere for the head
