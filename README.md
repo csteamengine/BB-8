@@ -17,6 +17,6 @@ Other Structural pieces of your choice (Ex// K'NEX or popsicle sticks)
 Other Items for Decoration
 Paint of your choice
 ```
-We used [this](http://www.amazon.com/gp/product/B00GLO5SMY?psc=1&redirect=true&ref_=ox_sc_act_title_1&smid=A3P9EAC3KD93H7) chassis and motor combo.
+We used [this](http://i.imgur.com/IKulixk.jpg) chassis and motor combo.
 
 
