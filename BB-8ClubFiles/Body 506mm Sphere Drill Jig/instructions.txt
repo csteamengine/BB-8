@@ -1,0 +1,58 @@
+This is intended to be cut with 3/4" MDF and the jig is based on using the California Quality Plastics 20" (506mm) hemispehere that is 1/2" thick. They offer a 3/4" as well but I wouldn't recommend using this jig on that since the pin holes should be centered.  
+
+Things to note for machining or how I setup my toolpaths...
+
+I highly recommend using the following website to determine the appropriate speeds for the tools you have:  
+
+http://zero-divide.net/?page=fswizard
+
+
+
+
+1. Small holes around the diameter to use for pins and magnets in the plastic are .125 in diameter.  Set to machine to peck drill to depth of .07501 (you will need to go a little deeper for a perfect hole but I didn't want to hit my spoil board).  I used a .125 drill bit.
+
+1b. Skip this but I used a 90 degree V-bit to put the creative commons image and text on it.  (I really like to label my jigs permanently)
+
+2. 3/4 4-flute end mill used to mill out a .25" deep pocket between the hamster and the outer dome ring.
+
+Last tool..
+
+3. 1/4" 4-flute end mill was used to pocket the strap holes to a depth of .7501
+
+4. 1/4" 4-flute end mill to cut the hamster.  Set the path to cut ON the line.
+
+5. 1/4" 4-flute end mill to cut the part OUTSIDE line.
+
+
+We've determine the max depth you would want to drill into your CQP hemisphere is a hair over an inch.  Any more and you will go out the sides.  
+
+We're using the following pins:
+
+Low-Strength Dowel Pin; Aluminum, 1/8" Diameter 3/4" Length
+McMaster-Carr Part Number: 97325A410  ($6.54/pk of 10) you need two packs.
+
+
+I also recommend a drill bit stop collar as well to ensure your hand drill goes to the exact depth.
+
+Drill Bit Stop Collar for Drill Bit Size 1/8"
+McMaster-Carr Part Number: 8865A11 ($3.04 ea) You only need one
+
+
+It may be overkill but you may also want to consider getting a proper drill bit and reamer for this application.
+
+Drill Bit: High-Speed Steel Jobbers' Drill bit for Plastic 60 degree point.  Specifically for use on cast acrylic, pvc, nylon, etc.  
+
+Size: 1/8", Overall length 2-3/4", Drilling Depth .9" 
+McMaster-Carr Part Number: 27465A81 ($3.47 ea)
+
+
+I really don't think you need this but...
+
+Reamer: McMaster-Carr Part Number: 2989A11; ($39.80 ea)
+
+
+Good luck and happy building!
+
+Steele
+
+
