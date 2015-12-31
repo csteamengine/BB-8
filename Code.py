@@ -2,20 +2,24 @@ import time
 import serial
 import pygame
 import RPi.GPIO as GPIO
-
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(4, GPIO.OUT)
-motor1 = GPIO.PWM(4,100)
+GPIO.setup(23, GPIO.OUT)
+motor1 = GPIO.PWM(23,100)
 motor1.start(0)
-GPIO.setup(17, GPIO.OUT)
-motor2 = GPIO.PWM(17,100)
+GPIO.setup(24, GPIO.OUT)
+motor2 = GPIO.PWM(24,100)
 motor2.start(0)
+GPIO.setup(4,GPIO.OUT)
+GPIO.setup(17,GPIO.OUT)
+GPIO.setup(27,GPIO.OUT)
+GPIO.setup(22,GPIO.OUT)
 pygame.init()
 pygame.joystick.init()
 clock = pygame.time.Clock()
 done = False
 LMA = 0
 RMA = 0
+motorOn = True
 print("Script Loaded")
 while done == False:
     for event in pygame.event.get():
@@ -37,21 +41,53 @@ while done == False:
     Select = controller.get_button(0)
     PS = controller.get_button(16)
     X = controller.get_button(14)
-    if LU <= 0:
-        LMA = 20 * abs(LU)
-        RMA = 20 * abs(LU)
-        if LS < 0:
-            RMA += 10 * abs(LS)
-        if LS > 0:
-            LMA += 10 * abs(LS)
+    if LU < 0:
+        GPIO.output(4, GPIO.HIGH)
+        GPIO.output(17,GPIO.LOW)
 
-    motor1.ChangeDutyCycle(RMA)
-    motor2.ChangeDutyCycle(LMA)
+        GPIO.output(27, GPIO.HIGH)
+        GPIO.output(22,GPIO.LOW)
+    if LU > 0:
+        GPIO.output(4, GPIO.LOW)
+        GPIO.output(17,GPIO.HIGH)
+        
+        GPIO.output(27, GPIO.LOW)
+        GPIO.output(22,GPIO.HIGH)
+
+    if RMA > 100:
+        RMA = 100
+    if LMA > 100:
+        LMA = 100
+    if RMA < 40 and RMA != 0:
+        RMA = 40
+    if LMA < 40 and LMA !=0:
+        LMA = 40
+    
+    LMA = 100 * abs(LU)
+    RMA = 100 * abs(LU)
+    if L1 == 1:
+        LMA = 0
+    if R1 == 1:
+        RMA = 0
+
+    if motorOn == True:
+        motor1.ChangeDutyCycle(LMA)
+        motor2.ChangeDutyCycle(RMA)
+    if motorOn == False:
+        motor1.ChangeDutyCycle(0)
+        motor2.ChangeDutyCycle(0)
+
     if L1 ==1 and R1 == 1 and R2 == 1 and L2 ==1:
          done = True
          print("Done!")
     if X == 1:
         print "BEE BEE DOH"
+    if Start == 1:
+        motorOn = False
+        print "motors Off"
+    if Select == 1:
+        motorOn = True
+        print "motors On"
     clock.tick(30)
 motor1.stop()
 motor2.stop()
