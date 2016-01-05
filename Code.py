@@ -2,6 +2,7 @@ import time
 import serial
 import pygame
 import RPi.GPIO as GPIO
+ser = serial.Serial('/dev/ttyACM0',9600)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(23, GPIO.OUT)
 motor1 = GPIO.PWM(23,100)
@@ -20,6 +21,7 @@ done = False
 LMA = 0
 RMA = 0
 motorOn = True
+toArduino = 90
 print("Script Loaded")
 while done == False:
     for event in pygame.event.get():
@@ -76,7 +78,9 @@ while done == False:
     if motorOn == False:
         motor1.ChangeDutyCycle(0)
         motor2.ChangeDutyCycle(0)
-
+    RU = round(RU,2)
+    ser.write(str(RU))
+    print(ser.readline(), RU)
     if L1 ==1 and R1 == 1 and R2 == 1 and L2 ==1:
          done = True
          print("Done!")
